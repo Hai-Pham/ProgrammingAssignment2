@@ -1,0 +1,21 @@
+> x = matrix(c(1,2,2,1), nrow=2, ncol=2)
+> x
+     [,1] [,2]
+[1,]    1    2
+[2,]    2    1
+> i <- makeCacheMatrix(x)
+> i$get()
+     [,1] [,2]
+[1,]    1    2
+[2,]    2    1
+> cacheSolve(i)
+           [,1]       [,2]
+[1,] -0.3333333  0.6666667
+[2,]  0.6666667 -0.3333333
+> cacheSolve(i)
+the inverse of same matrix is already cached
+result is
+           [,1]       [,2]
+[1,] -0.3333333  0.6666667
+[2,]  0.6666667 -0.3333333
+> 
