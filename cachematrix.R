@@ -2,19 +2,21 @@
 ## functions do
 
 ## Write a short comment describing this function
-
+## This function will look for global environment 
+## if the matrix is unchanged and was calculated the inverse before
+## then it can be get() from the environment
 makeCacheMatrix <- function(x = matrix()) {
         i <- NULL #inversed matrix
-        set <- function(y) {
+        set <- function(y) { #set the input matrix equal to cached matrix(env)
                 x <<- y
                 i <<- NULL
         }
-        get <- function() x
-        setinverse <- function(inverse) i <<- inverse
-        getinverse <- function() i 
+        get <- function() x # get the same matrix in the env. 
+        setinverse <- function(inverse) i <<- inverse # inverse from env. 
+        getinverse <- function() i #return the inverse 
         
-        list(set=set, get=get, 
-             setinverse=setinverse, 
+        list(set=set, get=get, #return a list of 2 pairs get(), set()  for original
+             setinverse=setinverse, # and for the inverse
              getinverse=getinverse)
 }
 
